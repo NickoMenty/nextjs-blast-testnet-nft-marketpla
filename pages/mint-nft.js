@@ -10,7 +10,14 @@ export default function LotteryEntrance() {
 
     const chainId = parseInt(chainIdHex)
     
-
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    
+    const RandomInt = getRandomInt(100, 9999999);
+    const price = ethers.utils.parseEther("0.01").toString();
     const basicNftAddress = chainId in BasicNftAddresses ? BasicNftAddresses[chainId][0] : null
 
     const dispatch = useNotification()
@@ -23,8 +30,11 @@ export default function LotteryEntrance() {
     } = useWeb3Contract({
         abi: BasicNft,
         contractAddress: basicNftAddress,
-        functionName: "mintNft",
-        params: {},
+        functionName: "requestNft",
+        msgValue: price,
+        params: {
+            randomWords: 8698879,
+        },
     })
 
     async function updateUIValues() {
