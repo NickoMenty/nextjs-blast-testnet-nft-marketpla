@@ -9,6 +9,7 @@ export default function LotteryEntrance() {
     const { Moralis, isWeb3Enabled, chainId: chainIdHex } = useMoralis()
 
     const chainId = parseInt(chainIdHex)
+    
 
     const basicNftAddress = chainId in BasicNftAddresses ? BasicNftAddresses[chainId][0] : null
 
@@ -26,42 +27,7 @@ export default function LotteryEntrance() {
         params: {},
     })
 
-    // /* View Functions */
-
-    // const { runContractFunction: getEntranceFee } = useWeb3Contract({
-    //     abi: BasicNft,
-    //     contractAddress: basicNftAddress, // specify the networkId
-    //     functionName: "getEntranceFee",
-    //     params: {},
-    // })
-
-    // const { runContractFunction: getPlayersNumber } = useWeb3Contract({
-    //     abi: BasicNft,
-    //     contractAddress: basicNftAddress,
-    //     functionName: "getNumberOfPlayers",
-    //     params: {},
-    // })
-
-    // const { runContractFunction: getRecentWinner } = useWeb3Contract({
-    //     abi: BasicNft,
-    //     contractAddress: basicNftAddress,
-    //     functionName: "getRecentWinner",
-    //     params: {},
-    // })
-
     async function updateUIValues() {
-        // // Another way we could make a contract call:
-        // // const options = { abi, contractAddress: basicNftAddress }
-        // // const fee = await Moralis.executeFunction({
-        // //     functionName: "getEntranceFee",
-        // //     ...options,
-        // // })
-        // const entranceFeeFromCall = (await getEntranceFee()).toString()
-        // const numPlayersFromCall = (await getPlayersNumber()).toString()
-        // const recentWinnerFromCall = await getRecentWinner()
-        // setEntranceFee(entranceFeeFromCall)
-        // setNumberOfPlayers(numPlayersFromCall)
-        // setRecentWinner(recentWinnerFromCall)
     }
 
     useEffect(() => {
@@ -92,7 +58,7 @@ export default function LotteryEntrance() {
 
     return (
         <div className="p-5">
-            <h1 className="py-4 px-4 font-bold text-2xl">No Notification on Mint. Check address and token ID on scan</h1>
+            <h1 className="py-4 px-4 font-bold text-2xl">Mint NFTS! Check address and token ID on scan</h1>
             {basicNftAddress ? (
                 <>
                     <button

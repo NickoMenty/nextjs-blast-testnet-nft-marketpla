@@ -12,9 +12,6 @@ export default function Header() {
                 <Link href="/sell-nft">
                     <a className="mr-4 p-6">Sell NFT</a>
                 </Link>
-                <Link href="/lottery">
-                    <a className="mr-4 p-6">Lottery</a>
-                </Link>
                 <Link href="/mint-nft">
                     <a className="mr-4 p-6">Mint Nft</a>
                 </Link>
