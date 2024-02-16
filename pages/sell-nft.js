@@ -103,7 +103,18 @@ export default function Home() {
     }, [proceeds, account, isWeb3Enabled, chainId])
 
     return (
+        <div className="sell">
         <div className={styles.container}>
+            <div className="scrolling-text">
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+                <h1 className="scrolling-content">SELL YOUR NFT</h1>
+            </div>
             <Form
                 onSubmit={approveAndList}
                 data={[
@@ -127,10 +138,10 @@ export default function Home() {
                         key: "price",
                     },
                 ]}
-                title="Sell your NFT!"
+                title=""
                 id="Main Form"
             />
-            <div>Withdraw {proceeds} proceeds</div>
+            <div className="sell_info">Withdraw {proceeds} proceeds</div>
             {proceeds != "0" ? (
                 <Button
                     onClick={() => {
@@ -147,10 +158,13 @@ export default function Home() {
                     }}
                     text="Withdraw"
                     type="button"
+                    className="button read_btn"
                 />
             ) : (
-                <div>No proceeds detected</div>
+                <div className="sell_info">No proceeds detected</div>
             )}
+            <img className="sell_img" src="/img/arch.png"></img>
+        </div>
         </div>
     )
 }
