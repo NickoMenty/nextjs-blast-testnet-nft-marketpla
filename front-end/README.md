@@ -1,46 +1,35 @@
-# NextJS NFT Marketplace with TheGraph
+# Avant art NFT marketplace
 
-*This repo has been updated for Sepolia over Goerli.*
+# Getting Started
 
-## 1. Git clone the contracts repo
+## Requirements
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [Nodejs](https://nodejs.org/en/)
+  - You'll know you've installed nodejs right if you can run:
+    - `node --version` and get an ouput like: `vx.x.x`
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
+  - You'll know you've installed yarn right if you can run:
+    - `yarn --version` and get an output like: `x.x.x`
+    - You might need to install it with `npm`
 
-In it's own terminal / command line, run: 
+## Quickstart
 
 ```
-git clone https://github.com/PatrickAlphaC/hardhat-nft-marketplace-fcc
-cd hardhat-nextjs-nft-marketplace-fcc
+git clone https://github.com/NickoMenty/nextjs-blast-testnet-nft-marketplace/
+cd nextjs-blast-testnet-nft-marketplace/front-end
 yarn
 ```
 
-## 2. Deploy to sepolia 
+# Usage
 
-After installing dependencies, deploy your contracts to sepolia:
-
-```
-yarn hardhat deploy --network sepolia
-```
-
-## 3. Deploy your subgraph
+local run:
 
 ```
-cd ..
-git clone https://github.com/PatrickAlphaC/graph-nft-marketplace-fcc
-cd graph-nft-marketplace-fcc
-yarn
+yarn run dev
 ```
-
-Follow the instructions of the [README](https://github.com/PatrickAlphaC/graph-nft-marketplace-fcc/blob/main/README.md) of that repo. 
-
-Then, make a `.env` file and place your temporary query URL into it as `NEXT_PUBLIC_SUBGRAPH_URL`.
-
-
-## 4. Start your UI
-
-Make sure that:
-- In your `networkMapping.json` you have an entry for `NftMarketplace` on the sepolia network. 
-- You have a `NEXT_PUBLIC_SUBGRAPH_URL` in your `.env` file. 
+# Build
 
 ```
-yarn dev
+yarn run build
 ```
-
