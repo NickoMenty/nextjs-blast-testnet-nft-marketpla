@@ -15,6 +15,7 @@ export default function Home() {
     const marketplaceAddress = networkMapping[chainString].NftMarketplace[0]
     const dispatch = useNotification()
     const [proceeds, setProceeds] = useState("0")
+    const Eth_proceeds =  ethers.utils.parseEther(proceeds).toString()
 
     const { runContractFunction } = useWeb3Contract()
 
