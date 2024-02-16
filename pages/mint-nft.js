@@ -59,12 +59,22 @@ export default function LotteryEntrance() {
     }
 
     return (
-        <div className="p-5">
-            <h1 className="py-4 px-4 font-bold text-2xl">Mint NFTS! Check address and token ID on scan</h1>
+        <div className="p-5 mint">
+            <div className="scrolling-text mint-scrolling">
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+                <h1 className="scrolling-content">MINT YOUR NFT</h1>
+            </div>
+            <h1 className="explain">Mint NFTs! Check address and token ID on scan</h1>
             {basicNftAddress ? (
                 <>
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
+                        className="button read_btn"
                         onClick={async () =>
                             await mintNft({
                                 // onComplete:
@@ -83,7 +93,7 @@ export default function LotteryEntrance() {
                     </button>
                 </>
             ) : (
-                <div>Please connect to a supported chain </div>
+                <div className="error">Please connect to a supported chain </div>
             )}
         </div>
     )
